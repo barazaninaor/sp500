@@ -1,0 +1,35 @@
+.container { position: relative; }
+
+.update-btn {
+  background: #1e3a8a;
+  color: white;
+  border: 1px solid #3b82f6;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* כדי שהפס התקדמות לא יחרוג מהכפתור */
+  transition: 0.3s;
+}
+
+.progress-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: #3b82f6;
+  opacity: 0.3;
+  transition: width 0.3s ease;
+}
+
+.btn-text { position: relative; z-index: 1; }
+
+.toast {
+  position: absolute;
+  top: 100%; right: 0;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0f172a;
+  border: 1px solid #3b82f6;
+  color: #60a5fa;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}

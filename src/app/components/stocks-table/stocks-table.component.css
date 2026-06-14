@@ -1,0 +1,90 @@
+/* מיכל הטבלה - ממרכז ומעניק מראה מודרני */
+.table-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    overflow-x: auto;
+}
+
+.section-title {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* הטבלה עצמה */
+.stocks-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    color: #e2e8f0;
+    table-layout: fixed;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* הגדרות אחידות לכל תא */
+.stocks-table th, .stocks-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* הקצאת רוחב עמודות */
+.stocks-table th:nth-child(1), .stocks-table td:nth-child(1) { width: 40px; }
+.stocks-table th:nth-child(2), .stocks-table td:nth-child(2) { width: 80px; }
+.stocks-table th:nth-child(3), .stocks-table td:nth-child(3) { 
+    width: 260px; 
+    text-align: left; 
+    padding-left: 20px; 
+}
+
+/* הגדרות כותרת */
+.stocks-table th {
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* אפקט Hover לשורה */
+.stocks-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* עיצוב עמודת המספור */
+.stocks-table td:first-child {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* צבעים לשינוי אחוזים */
+.positive { color: #22c55e; font-weight: 600; }
+.negative { color: #ef4444; font-weight: 600; }
+.nowrap { white-space: nowrap; }
+
+th {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+th:hover {
+  color: #60a5fa; /* צבע כחול נעים בריחוף */
+}
+
+th span {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  color: #60a5fa;
+}

@@ -1,0 +1,65 @@
+<div class="table-container">
+  <h2 class="section-title">{{ title }}</h2>
+  <table class="stocks-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Symbol</th>
+        <th>Company</th>
+        <th (click)="onSort('last_price')">
+          Price
+          <span *ngIf="sortColumn === 'last_price'">{{
+            sortDirection === "asc" ? "▲" : "▼"
+          }}</span>
+        </th>
+        <th (click)="onSort('percent_change')">
+          Change
+          <span *ngIf="sortColumn === 'percent_change'">{{
+            sortDirection === "asc" ? "▲" : "▼"
+          }}</span>
+        </th>
+        <th (click)="onSort('market_cap')">
+          Market Cap
+          <span *ngIf="sortColumn === 'market_cap'">{{
+            sortDirection === "asc" ? "▲" : "▼"
+          }}</span>
+        </th>
+        <th (click)="onSort('volume')">
+          Volume
+          <span *ngIf="sortColumn === 'volume'">{{
+            sortDirection === "asc" ? "▲" : "▼"
+          }}</span>
+        </th>
+        <th (click)="onSort('founded')">
+          Founded
+          <span *ngIf="sortColumn === 'founded'">{{
+            sortDirection === "asc" ? "▲" : "▼"
+          }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stock of stocks; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <strong>{{ stock._id }}</strong>
+        </td>
+        <td>{{ stock.name }}</td>
+        <td>${{ stock.market_data?.last_price | number: "1.2-2" }}</td>
+        <td
+          [ngClass]="
+            stock.market_data?.percent_change >= 0 ? 'positive' : 'negative'
+          "
+        >
+          {{ stock.market_data?.percent_change >= 0 ? "+" : ""
+          }}{{ stock.market_data?.percent_change }}%
+        </td>
+        <td class="nowrap">
+          ${{ stock.market_data?.market_cap | formatNumber }}
+        </td>
+        <td class="nowrap">{{ stock.market_data?.volume | formatNumber }}</td>
+        <td>{{ stock.details?.founded | slice: 0 : 4 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

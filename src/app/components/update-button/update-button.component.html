@@ -1,0 +1,15 @@
+<div class="container">
+  <button class="update-btn" (click)="onUpdate()" [disabled]="isLoading">
+    <div
+      class="progress-fill"
+      [style.width.%]="progress"
+      *ngIf="isLoading"
+    ></div>
+
+    <span class="btn-text">
+      {{ isLoading ? "Updating " + progress + "%" : "Update Market Data" }}
+    </span>
+  </button>
+
+  <div class="toast" *ngIf="showToast">{{ toastMessage }}</div>
+</div>

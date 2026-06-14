@@ -1,0 +1,52 @@
+.sectors-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(92, 94, 206, 0.219);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.sectors-navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 10px; /* צמצמתי טיפה את ה-gap כדי שיהיה יותר מקום לטקסט */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* חשוב מאוד: מאפשר ירידת שורה של כפתורים שלמים */
+    justify-content: center;
+}
+
+.sectors-navbar .nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent; 
+    border-radius: 8px;
+    cursor: pointer;
+    
+    /* התיקונים המרכזיים למניעת "מריחה": */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2; /* מונע התנגשות בין שורות אם בכל זאת יש */
+    text-align: center;
+    white-space: normal; /* מאפשר לטקסט לרדת שורה בתוך הכפתור בצורה תקינה */
+    min-width: 80px;     /* מונע מכפתורים קצרים מדי להיראות מוזר */
+}
+
+.sectors-navbar .nav-links a:hover {
+    color: #60a5fa !important;
+}
+
+.sectors-navbar .nav-links a.active {
+    color: #ffffff !important;
+    border: 2px solid #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.15);
+}

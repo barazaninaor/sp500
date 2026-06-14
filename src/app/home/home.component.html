@@ -1,0 +1,52 @@
+<div class="home-container">
+  <header class="hero-section">
+    <h1 class="main-title">Market Intelligence Hub</h1>
+    <p class="hero-description">
+      Real-time tracking for the S&P 500. Analyze market capitalization, monitor
+      sector performance, and gain insights into the world's leading companies.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>500+</h3>
+        <p>Companies</p>
+      </div>
+      <div class="stat-card">
+        <h3>11</h3>
+        <p>Market Sectors</p>
+      </div>
+      <div class="stat-card">
+        <h3>Live</h3>
+        <p>Market Data</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="movers-container">
+  <div class="mover-card">
+    <h3 class="positive">Top Gainers 🚀</h3>
+    <table>
+      <tr *ngFor="let stock of topGainers">
+        <td>
+          <strong>{{ stock._id }}</strong>
+        </td>
+        <td class="sector-text">{{ stock.sector }}</td>
+        <td class="positive">+{{ stock.market_data?.percent_change }}%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="mover-card">
+    <h3 class="negative">Top Losers 🔻</h3>
+    <table>
+      <tr *ngFor="let stock of topLosers">
+        <td>
+          <strong>{{ stock._id }}</strong>
+        </td>
+        <td class="sector-text">{{ stock.sector }}</td>
+        <td class="negative">{{ stock.market_data?.percent_change }}%</td>
+      </tr>
+    </table>
+  </div>
+</div>

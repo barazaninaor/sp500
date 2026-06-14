@@ -1,0 +1,27 @@
+<nav class="sectors-navbar">
+  <ul class="nav-links">
+    <li *ngFor="let sector of sectors">
+      <a
+        (click)="onSelectSector(sector)"
+        [class.active]="activeSectorId === sector._id"
+        style="cursor: pointer"
+      >
+        {{ sector.name }}
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<app-stocks-table
+  *ngIf="selectedSectorName && filteredStocks.length > 0"
+  [stocks]="filteredStocks"
+  [title]="selectedSectorName"
+>
+</app-stocks-table>
+
+<p
+  *ngIf="selectedSectorName && filteredStocks.length === 0"
+  style="text-align: center; color: white; margin-top: 20px"
+>
+  No stocks found for this sector.
+</p>
